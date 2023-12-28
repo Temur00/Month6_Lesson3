@@ -1,0 +1,103 @@
+// VARIABLES
+$color-white: #fff;
+$color-black: #000;
+$color-wh: #f0f0f0;
+$color-main: #2c2d2e;
+$color-main-dim: #919399;
+$color-main-hover: #ef7c00;
+
+header {
+  nav {
+    // padding-left: 116px;
+    // padding-right: 116px;
+    background: $color-white;
+    opacity: 0.97;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0px 2px 28px 5px rgba(65, 66, 67);
+    .nav-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        padding-top: 13px;
+        padding-bottom: 12px;
+      }
+      .nav-item {
+        display: flex;
+        gap: 32px;
+        a {
+          text-decoration: none;
+          color: $color-main;
+          font-feature-settings: "clig" off, "liga" off;
+          font-family: Montserrat;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px; /* 150% */
+          transition: 0.4s;
+        }
+        a:hover {
+          color: $color-main-hover;
+        }
+      }
+      button {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        padding: 4px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        transition: 0.4s;
+        border-radius: 12px;
+
+        p:first-child {
+          color: $color-main-hover;
+        }
+        p:nth-child(2) {
+          padding-bottom: 4px;
+          color: $color-main-dim;
+        }
+        p:nth-child(3) {
+          color: $color-main-dim;
+        }
+      }
+      button:hover {
+        background: $color-wh;
+      }
+      .hamburger {
+        display: none;
+        svg {
+          cursor: pointer;
+        }
+      }
+    }
+    @media only screen and (max-width: 1040px) {
+      .nav-items {
+        .nav-item {
+          gap: 10px;
+        }
+      }
+    }
+    @media only screen and (max-width: 900px) {
+      .nav-items {
+        display: flex;
+        .nav-item {
+          display: none;
+        }
+        .btn-ham {
+          display: flex;
+          .hamburger {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
